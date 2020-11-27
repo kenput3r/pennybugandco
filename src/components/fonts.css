@@ -12,3 +12,10 @@
   src: url("/fonts/AmaticSC-Bold.ttf") format("truetype");
   font-display: swap;
 }
+@font-face {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Avenir-Book-01.ttf") format("truetype");
+  font-display: swap;
+}

@@ -1,4 +1,17 @@
 @import url("https://use.typekit.net/wjo6wkw.css");
+
+:root {
+  --primary-dark: #244652;
+  --primary-medium: #546873;
+  --primary-light: #91a0a7;
+  --accent-dark: #e0b2a3;
+  --accent-light: #f3cac6;
+  --title-font: lust-script, sans-serif;
+  --body-font: Avenir;
+  --button-font-fat: abril-fatface, serif;
+  --button-font: abril-display, serif;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -11,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: var(--body-font);
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

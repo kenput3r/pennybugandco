@@ -1,20 +1,29 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 import "./layout.css"
 import "./fonts.css"
+import Header from "./header"
+import Footer from "./footer"
+import flowerTopLeft from "../images/flower-top-left.png"
 
-const Layout = ({ children }) => {
+const Container = styled.div`
+  background-image: ${props =>
+    props.page === "home" ? "url(" + flowerTopLeft + ")" : ""};
+  background-repeat: no-repeat;
+  background-position: -30px 20px;
+  @media (max-width: 428px) {
+    background-size: 35vw;
+  }
+`
+
+const Layout = ({ children, page }) => {
   return (
-    <>
+    <Container page={page}>
+      <Header page={page} />
       <main>{children}</main>
-    </>
+      <Footer />
+    </Container>
   )
 }
 
