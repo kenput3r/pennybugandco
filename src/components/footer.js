@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 
 import facebook from "../images/facebook.png"
@@ -10,11 +12,15 @@ const Container = styled.div`
 
   footer {
     background-color: var(--primary-light);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+    padding-bottom: 20px;
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
 
     a {
       display: inline-block;
@@ -26,7 +32,7 @@ const Container = styled.div`
       text-align: center;
       margin-left: 5px;
       margin-right: 5px;
-      margin-top: -100px;
+      margin-top: -50px;
 
       img {
         height: 100%;
@@ -40,24 +46,44 @@ const Container = styled.div`
       }
     }
   }
+  .logo-container {
+    max-width: 200px;
+    margin: 0 auto;
+  }
 `
 
-const footer = () => {
+const Footer = ({ page }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <Container>
       <footer>
-        <a href="/">
-          <img src={instagram} alt="instagram" />
-        </a>
-        <a href="/">
-          <img src={facebook} alt="facebook" />
-        </a>
-        <a href="/">
-          <img className="email" src={email} alt="email" />
-        </a>
+        <nav>
+          <a href="/">
+            <img src={instagram} alt="instagram" />
+          </a>
+          <a href="/">
+            <img src={facebook} alt="facebook" />
+          </a>
+          <a href="/">
+            <img className="email" src={email} alt="email" />
+          </a>
+        </nav>
+        <div className="logo-container">
+          <Img fluid={data.logo.childImageSharp.fluid} />
+        </div>
       </footer>
     </Container>
   )
 }
 
-export default footer
+export default Footer

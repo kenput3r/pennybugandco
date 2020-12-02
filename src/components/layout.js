@@ -8,8 +8,7 @@ import Footer from "./footer"
 import flowerTopLeft from "../images/flower-top-left.png"
 
 const Container = styled.div`
-  background-image: ${props =>
-    props.page === "home" ? "url(" + flowerTopLeft + ")" : ""};
+  background-image: url(${flowerTopLeft});
   background-repeat: no-repeat;
   background-position: -30px 20px;
   @media (max-width: 428px) {
@@ -22,7 +21,7 @@ const Layout = ({ children, page }) => {
     <Container page={page}>
       <Header page={page} />
       <main>{children}</main>
-      <Footer />
+      <Footer page={page} />
     </Container>
   )
 }

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Cupid Box",
+    "slug": "cupid-box",
+    "description": "The very married Christmas box. This box includes two mugs (Mr. & Mrs.) + a personalized ornament!",
+    "price": 29,
+    "images": [{"src": "./images/cupid-box-1.jpg", "alt": ""}, {"src": "./images/cupid-box-2.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
+    "customization": {"title": "Ornament Text", "character_cap": 40}
+  },
+  {
+    "title": "Rudolph Box",
+    "slug": "rudolph-box",
+    "description": "Rudolph 🦌 Holiday Mug, Voluspa Candy Cane candle, Personalized Ornament, Fleece Blanket & Holiday cookie",
+    "price": 45,
+    "images": [{"src": "./images/rudolph-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
+    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
+    "customization": {"title": "Ornament Text", "character_cap": 40}
+  },
+  {
+    "title": "Blitzen Box",
+    "slug": "blitzen-box",
+    "description": "Blitzen 🦌 Holiday mug, Voluspa Candy Cane candle, Personalized ornament & Holiday cookie",
+    "price": 38,
+    "images": [{"src": "./images/blitzen-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
+    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
+    "customization": {"title": "Ornament Text", "character_cap": 40}
+
+  },
+  {
+    "title": "Dasher Box",
+    "slug": "dasher-box",
+    "description": "Dasher 🦌 Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
+    "price": 28,
+    "images": [{"src": "./images/dasher-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}]
+  },
+  {
+    "title": "Prancer Box",
+    "slug": "prancer-box",
+    "description": "For the fur kids 🐕 that made it on the nice list. Double sided bandana, ornament and dog treat from the local dog bakery",
+    "price": 20,
+    "images": [{"src": "./images/prancer-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "variants":[{"option_name": "Bandana Size", "options": ["Small", "Medium", "Large"]}],
+    "customization": {"title": "Ornament Text", "character_cap": 15}
+  }
+]
