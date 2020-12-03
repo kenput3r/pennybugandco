@@ -5,11 +5,22 @@ import SEO from "../components/seo"
 import Carousel from "../components/Carousel"
 
 import swirl from "../images/product-swirl.png"
+import bottomFlower from "../images/product-flower-bottom.png"
 
 const SwirlContainer = styled.div`
   background-image: url(${swirl});
   background-size: 100%;
   background-repeat: no-repeat;
+
+  .flower {
+    margin-top: -75px;
+    position: absolute;
+    right: 0;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
 `
 
 const Wrapper = styled.div`
@@ -23,6 +34,10 @@ const Wrapper = styled.div`
     font-family: var(--title-font);
     font-size: 5rem;
     letter-spacing: 2px;
+
+    @media (max-width: 767px) {
+      font-size: 3rem;
+    }
   }
 
   .price {
@@ -61,6 +76,7 @@ const Wrapper = styled.div`
   label {
     display: block;
     font-size: 2rem;
+    line-height: 1;
   }
 
   .button-wrapper {
@@ -87,6 +103,7 @@ const Wrapper = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `
 const Col = styled.div`
   display: flex;
@@ -95,6 +112,23 @@ const Col = styled.div`
 
   &.padded {
     padding: 60px;
+    @media (max-width: 767px) {
+      padding: 15px;
+      &.carousel {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  &.small-100 {
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+  &.details {
+    @media (max-width: 767px) {
+      margin-top: 80px;
+    }
   }
 `
 const updateSelectedVariant = (e, setState) => {
@@ -124,10 +158,10 @@ const Product = ({ data }) => {
       <SwirlContainer>
         <Wrapper>
           <Row>
-            <Col className="padded">
+            <Col className="padded small-100 carousel">
               <Carousel slides={product.images} />
             </Col>
-            <Col className="padded">
+            <Col className="padded small-100 details">
               <h1>{product.title}</h1>
               <p className="description">{product.description}</p>
               <p className="price">${product.price} USD</p>
@@ -175,6 +209,7 @@ const Product = ({ data }) => {
             </Col>
           </Row>
         </Wrapper>
+        <img src={bottomFlower} alt="decorative flower" className="flower" />
       </SwirlContainer>
     </Layout>
   )

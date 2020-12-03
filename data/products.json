@@ -6,7 +6,8 @@
     "price": 29,
     "images": [{"src": "./images/cupid-box-1.jpg", "alt": ""}, {"src": "./images/cupid-box-2.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
-    "customization": {"title": "Ornament Text", "character_cap": 40}
+    "customization": {"title": "Ornament Text", "character_cap": 40},
+    "tags": ["Cups", "Mugs", "Ornaments", "Mr. & Mrs.", "Box Sets"]
   },
   {
     "title": "Rudolph Box",
@@ -15,7 +16,8 @@
     "price": 45,
     "images": [{"src": "./images/rudolph-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
-    "customization": {"title": "Ornament Text", "character_cap": 40}
+    "customization": {"title": "Ornament Text", "character_cap": 40},
+    "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
     "title": "Blitzen Box",
@@ -24,8 +26,8 @@
     "price": 38,
     "images": [{"src": "./images/blitzen-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
-    "customization": {"title": "Ornament Text", "character_cap": 40}
-
+    "customization": {"title": "Ornament Text", "character_cap": 40},
+    "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
     "title": "Dasher Box",
@@ -33,7 +35,8 @@
     "description": "Dasher 🦌 Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
     "price": 28,
     "images": [{"src": "./images/dasher-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
-    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}]
+    "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
+    "tags": ["Cups", "Mugs", "Box Sets"]
   },
   {
     "title": "Prancer Box",
@@ -42,6 +45,7 @@
     "price": 20,
     "images": [{"src": "./images/prancer-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
     "variants":[{"option_name": "Bandana Size", "options": ["Small", "Medium", "Large"]}],
-    "customization": {"title": "Ornament Text", "character_cap": 15}
+    "customization": {"title": "Ornament Text", "character_cap": 15},
+    "tags": ["Bandanas", "Pet", "Box Sets"]
   }
 ]

@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
+import { SiteContext } from "./context"
 import etsyLogo from "../images/etsy-logo.png"
 import hamburger from "../images/hamburger.png"
 
@@ -12,11 +13,13 @@ const StyledHeader = styled.header`
   padding: 10px;
   width: 100%;
   max-width: 100%;
+  z-index: 11;
+  position: fixed;
   @media (max-width: 767px) {
     justify-content: space-between;
   }
 
-  h1 {
+  .h1 {
     border-right: 1px solid #fff;
     color: #fff;
     font-family: var(--button-font-fat);
@@ -25,6 +28,11 @@ const StyledHeader = styled.header`
     margin-bottom: 0;
     @media (max-width: 991px) {
       padding-right: 15px;
+    }
+    @media (max-width: 767px) {
+      border-right: 0;
+      padding-right: 0;
+      font-size: 1.5rem;
     }
   }
 
@@ -118,42 +126,49 @@ const GridItem = styled.div`
   }
 `
 
-const Header = ({ page }) => (
-  <StyledHeader>
-    <GridItem className="heading-wrapper" flex={1}>
-      <h1>PENNY BUG &amp; CO.</h1>
-    </GridItem>
-    <GridItem className="nav-wrapper" flex={3} align="flex-start">
-      <nav aria-label="Primary">
-        <ul>
-          {page !== "home" && (
+const Header = ({ page }) => {
+  const { isDrawerOpen, setIsDrawerOpen } = useContext(SiteContext)
+  return (
+    <StyledHeader>
+      <GridItem className="heading-wrapper" flex={1}>
+        {page === "home" ? (
+          <h1 className="h1">PENNY BUG &amp; CO.</h1>
+        ) : (
+          <div className="h1">PENNY BUG &amp; CO.</div>
+        )}
+      </GridItem>
+      <GridItem className="nav-wrapper" flex={3} align="flex-start">
+        <nav aria-label="Primary">
+          <ul>
+            {page !== "home" && (
+              <li>
+                <Link to="/">HOME</Link>
+              </li>
+            )}
             <li>
-              <Link to="/">HOME</Link>
+              <Link to="/products">SHOP</Link>
             </li>
-          )}
-          <li>
-            <Link to="/">SHOP</Link>
-          </li>
-          <li>
-            <Link to="/">FAQ</Link>
-          </li>
-          <li>
-            <Link to="/">CONTACT</Link>
-          </li>
-          <li className="image-link">
-            <Link to="/">
-              <img src={etsyLogo} alt="Etsy" />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="burger-wrapper">
-        <button>
-          <img src={hamburger} alt="menu button" />
-        </button>
-      </div>
-    </GridItem>
-  </StyledHeader>
-)
+            <li>
+              <Link to="/">FAQ</Link>
+            </li>
+            <li>
+              <Link to="/">CONTACT</Link>
+            </li>
+            <li className="image-link">
+              <Link to="/">
+                <img src={etsyLogo} alt="Etsy" />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="burger-wrapper">
+          <button onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+            <img src={hamburger} alt="menu button" />
+          </button>
+        </div>
+      </GridItem>
+    </StyledHeader>
+  )
+}
 
 export default Header

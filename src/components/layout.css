@@ -32,6 +32,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  overflow-x: hidden;
 }
 article,
 aside,
@@ -85,7 +86,8 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
+h1,
+.h1 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
