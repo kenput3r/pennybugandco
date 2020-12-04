@@ -68,13 +68,21 @@ const Footer = ({ page }) => {
     <Container>
       <footer>
         <nav>
-          <a href="/">
+          <a
+            href="https://instagram.com/pennybug.co"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={instagram} alt="instagram" />
           </a>
-          <a href="/">
+          <a
+            href="https://facebook.com/pennybug.co"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={facebook} alt="facebook" />
           </a>
-          <a href="/">
+          <a href="mailto:info@pennybug.co">
             <img className="email" src={email} alt="email" />
           </a>
         </nav>

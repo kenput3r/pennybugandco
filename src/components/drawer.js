@@ -19,6 +19,7 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ isDrawerOpen }) =>
     isDrawerOpen ? "translateX(0)" : "translateX(-100%)"};
@@ -36,17 +37,23 @@ const Container = styled.div`
 `
 
 const Drawer = () => {
-  const { isDrawerOpen } = useContext(SiteContext)
+  const { isDrawerOpen, setIsDrawerOpen } = useContext(SiteContext)
   return (
     <Container isDrawerOpen={isDrawerOpen}>
       <div>
-        <Link to="/">HOME</Link>
+        <Link to="/" onClick={() => setIsDrawerOpen(false)}>
+          HOME
+        </Link>
       </div>
       <div>
-        <Link to="/products">PRODUCTS</Link>
+        <Link to="/products" onClick={() => setIsDrawerOpen(false)}>
+          PRODUCTS
+        </Link>
       </div>
       <div>
-        <Link to="/cart">CART</Link>
+        <Link to="/cart" onClick={() => setIsDrawerOpen(false)}>
+          CART
+        </Link>
       </div>
     </Container>
   )

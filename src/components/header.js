@@ -7,12 +7,13 @@ import hamburger from "../images/hamburger.png"
 
 const StyledHeader = styled.header`
   background-color: var(--primary-medium);
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   letter-spacing: 3px;
   padding: 10px;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
   z-index: 11;
   position: fixed;
   @media (max-width: 767px) {

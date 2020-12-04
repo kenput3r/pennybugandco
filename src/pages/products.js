@@ -13,6 +13,24 @@ const Container = styled.div`
     text-align: center;
   }
 
+  .mobile-filters-toggle {
+    display: none;
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 5px;
+    }
+    button {
+      background-color: transparent;
+      border: 0;
+      color: var(--primary-medium);
+      font-family: var(--button-font);
+      padding: 0;
+    }
+  }
+
   li {
     list-style-type: none;
   }
@@ -25,6 +43,9 @@ const Container = styled.div`
     margin-left: 1.5%;
     margin-right: 1.5%;
     margin-bottom: 1.45rem;
+    @media (max-width: 767px) {
+      width: 97%;
+    }
     a.image-container {
       background-color: var(--accent-dark);
       display: block;
@@ -33,8 +54,8 @@ const Container = styled.div`
       .spacer {
         background-color: #fff;
         height: 10px;
+        left: 0;
         width: 100%;
-        margin-right: -10px;
         position: absolute;
       }
       .gatsby-image-wrapper {
@@ -82,6 +103,36 @@ const Col = styled.div`
 
   &.filters {
     flex: 2;
+    @media (max-width: 767px) {
+      box-sizing: border-box;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--primary-medium);
+      height: 100vh;
+      max-height: 100vh;
+      font-family: var(--button-font-fat);
+      text-align: left;
+      padding: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: transform 0.3s ease-in-out;
+      transform: ${({ isFiltersOpen }) =>
+        isFiltersOpen ? "translateX(0)" : "translateX(-100%)"};
+      width: 80vw;
+      z-index: 10;
+      button {
+        color: #fff !important;
+        &.close-filters {
+          font-size: 2rem;
+        }
+      }
+      .main-list {
+        margin-left: 0;
+      }
+    }
 
     button {
       background-color: transparent;
@@ -104,24 +155,48 @@ const Col = styled.div`
   }
   &.products {
     flex: 8;
+    @media (max-width: 767px) {
+      flex: none;
+      width: 100%;
+      max-width: 100%;
+      padding-left: 15px;
+    }
   }
 `
 
 const Products = ({ data }) => {
-  const [filter, setFilter] = useState("")
+  const [filter, setFilterState] = useState("")
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false)
   const products = filter
     ? data.allProductsJson.edges.filter(product =>
         product.node.tags.includes(filter)
       )
     : data.allProductsJson.edges
+  const setFilter = filter => {
+    setFilterState(filter)
+    setIsFiltersOpen(false)
+  }
   return (
     <Layout>
       <Container>
         <Wrapper>
           <h1>Products</h1>
+          <div className="mobile-filters-toggle">
+            <button onClick={() => setIsFiltersOpen(!isFiltersOpen)}>
+              +FILTERS
+            </button>
+          </div>
           <Row>
-            <Col className="filters">
-              <ul>
+            <Col className="filters" isFiltersOpen={isFiltersOpen}>
+              <div className="mobile-filters-toggle">
+                <button
+                  className="close-filters"
+                  onClick={() => setIsFiltersOpen(!isFiltersOpen)}
+                >
+                  &times;
+                </button>
+              </div>
+              <ul className="main-list">
                 <li>
                   <button onClick={() => setFilter("")}>ALL PRODUCTS</button>
                 </li>

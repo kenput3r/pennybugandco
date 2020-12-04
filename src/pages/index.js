@@ -275,7 +275,7 @@ const IndexPage = ({ data }) => (
     <CallToAction>
       <div className="button-row">
         <div className="button-container">
-          <Link to="/">SHOP NOW</Link>
+          <Link to="/products">SHOP NOW</Link>
         </div>
       </div>
       <div className="right-flower-container">
