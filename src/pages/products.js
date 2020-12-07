@@ -51,6 +51,7 @@ const Container = styled.div`
       display: block;
       padding-bottom: 10px;
       padding-right: 10px;
+      position: relative;
       .spacer {
         background-color: #fff;
         height: 10px;

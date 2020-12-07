@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Carousel from "../components/Carousel"
+
+import { SiteContext } from "../components/context"
 
 import swirl from "../images/product-swirl.png"
 import bottomFlower from "../images/product-flower-bottom.png"
@@ -139,8 +141,12 @@ const updateSelectedVariant = (e, setState) => {
   }))
 }
 const Product = ({ data }) => {
+  const { pushToCart, getCart } = useContext(SiteContext)
   const product = data.productsJson
   const [selectedVariants, setSelectedVariants] = useState(null)
+  const [lineItemID, setLineItemID] = useState(0)
+  const [customization, setCustomization] = useState("")
+
   useEffect(() => {
     //set initial selected variants
     if (selectedVariants === null) {
@@ -151,7 +157,28 @@ const Product = ({ data }) => {
       }
       setSelectedVariants(initial_variants)
     }
+
+    ;(async () => {
+      const cart = await getCart()
+      if (cart && cart.lineItems.length) {
+        setLineItemID(cart.lineItems.length)
+      }
+    })()
   }, [selectedVariants, product.variants])
+
+  const addToCart = () => {
+    pushToCart({
+      id: lineItemID,
+      variants: selectedVariants,
+      customization,
+      slug: product.slug,
+      image: product.images[0],
+      title: product.title,
+      price: product.price,
+      stripeId: product.id,
+    })
+    setLineItemID(lineItemID + 1)
+  }
   return (
     <Layout>
       <SEO title={product.title} />
@@ -199,11 +226,16 @@ const Product = ({ data }) => {
                     <textarea
                       id={product.customization.title}
                       name={product.customization.title}
+                      onChange={e => setCustomization(e.target.value)}
                     ></textarea>
                   </div>
                 )}
                 <div className="button-wrapper">
-                  <input type="button" value="ADD TO CART" />
+                  <input
+                    type="button"
+                    value="ADD TO CART"
+                    onClick={addToCart}
+                  />
                 </div>
               </form>
             </Col>
@@ -220,9 +252,11 @@ export default Product
 export const query = graphql`
   query($slug: String!) {
     productsJson(slug: { eq: $slug }) {
+      id
       title
       description
       price
+      slug
       images {
         src {
           id

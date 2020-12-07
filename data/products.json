@@ -1,5 +1,7 @@
 [
   {
+    "id": "price_1HvArgHx7oIWq14J2uNAmkfc",
+    "realId": "prod_IWCoKPh8wAZFuQ",
     "title": "Cupid Box",
     "slug": "cupid-box",
     "description": "The very married Christmas box. This box includes two mugs (Mr. & Mrs.) + a personalized ornament!",
@@ -10,6 +12,8 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Mr. & Mrs.", "Box Sets"]
   },
   {
+    "id": "price_1HvAtuHx7oIWq14JgWxoW572",
+    "realId": "prod_IWCqeHOBI1bLTG",
     "title": "Rudolph Box",
     "slug": "rudolph-box",
     "description": "Rudolph 🦌 Holiday Mug, Voluspa Candy Cane candle, Personalized Ornament, Fleece Blanket & Holiday cookie",
@@ -20,6 +24,7 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
+    "id": "prod_IWCqWRgvv59k68",
     "title": "Blitzen Box",
     "slug": "blitzen-box",
     "description": "Blitzen 🦌 Holiday mug, Voluspa Candy Cane candle, Personalized ornament & Holiday cookie",
@@ -30,6 +35,7 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
+    "id": "prod_IWCrOLJG1dirSV",
     "title": "Dasher Box",
     "slug": "dasher-box",
     "description": "Dasher 🦌 Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
@@ -39,6 +45,7 @@
     "tags": ["Cups", "Mugs", "Box Sets"]
   },
   {
+    "id": "prod_IWCtAiyeZ2xPKM",
     "title": "Prancer Box",
     "slug": "prancer-box",
     "description": "For the fur kids 🐕 that made it on the nice list. Double sided bandana, ornament and dog treat from the local dog bakery",

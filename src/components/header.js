@@ -155,6 +155,9 @@ const Header = ({ page }) => {
             <li>
               <Link to="/">CONTACT</Link>
             </li>
+            <li>
+              <Link to="/cart">CART</Link>
+            </li>
             <li className="image-link">
               <Link to="/">
                 <img src={etsyLogo} alt="Etsy" />
