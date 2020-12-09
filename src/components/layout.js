@@ -9,7 +9,8 @@ import Footer from "./footer"
 import flowerTopLeft from "../images/flower-top-left.png"
 
 const Container = styled.div`
-  background-image: url(${flowerTopLeft});
+  background-image: ${({ page }) =>
+    ["cart"].includes(page) === false ? "url(" + flowerTopLeft + ")" : "none"};
   background-repeat: no-repeat;
   background-position: -30px 20px;
   @media (max-width: 428px) {

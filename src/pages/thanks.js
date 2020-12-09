@@ -16,6 +16,11 @@ const log_order = async orderInfo => {
   console.log(response_json)
 }
 
+/**
+ * @function get_customer - gets stripe customer info and payments session
+ * @param {*} session_id
+ * @returns { customer, session }
+ */
 const get_customer = async session_id => {
   const headers = {
     "Content-type": "application/json",
@@ -41,13 +46,13 @@ const Thanks = () => {
         const customer = await get_customer(session_id)
         console.log(customer)
         if (cart && cart.lineItems && customer) {
-          const orderInfo = { lineItems: cart.lineItems }
+          const orderInfo = { lineItems: cart.lineItems, customer }
           log_order(orderInfo)
           localStorage.removeItem("cartItems")
         }
       }
     })()
-  }, [log_order, get_customer])
+  }, [log_order, get_customer, getCart])
 
   return (
     <Layout>

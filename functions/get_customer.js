@@ -10,6 +10,6 @@ exports.handler = async function (event, context) {
   const customer = await stripe.customers.retrieve(session.customer)
   return {
     statusCode: 200,
-    body: JSON.stringify({ customer }),
+    body: JSON.stringify({ customer, session }),
   }
 }

@@ -190,6 +190,10 @@ button,
 select {
   text-transform: none;
 }
+button:hover,
+input[type="button"]:hover {
+  cursor: pointer;
+}
 [type="reset"],
 [type="submit"],
 button,

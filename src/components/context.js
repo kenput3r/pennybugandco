@@ -25,6 +25,19 @@ const pushToCart = async item => {
   return Promise.resolve("item added")
 }
 
+const removeFromCart = id => {
+  const items = localStorage.getItem("cartItems")
+  const cartItems = JSON.parse(items)
+  console.log(cartItems)
+  const index = cartItems.lineItems.findIndex(item => item.id === id)
+  console.log(index)
+  cartItems.lineItems.splice(index, 1)
+  console.log(cartItems)
+  const itemsJSON = JSON.stringify(cartItems)
+  localStorage.setItem("cartItems", itemsJSON)
+  return Promise.resolve("cart updated")
+}
+
 export const SiteProvider = ({ children }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
@@ -36,6 +49,7 @@ export const SiteProvider = ({ children }) => {
         getCart,
         isBrowser,
         pushToCart,
+        removeFromCart,
       }}
     >
       {children}

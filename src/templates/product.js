@@ -146,6 +146,7 @@ const Product = ({ data }) => {
   const [selectedVariants, setSelectedVariants] = useState(null)
   const [lineItemID, setLineItemID] = useState(0)
   const [customization, setCustomization] = useState("")
+  const [buttonText, setButtonText] = useState("ADD TO CART")
 
   useEffect(() => {
     //set initial selected variants
@@ -164,7 +165,7 @@ const Product = ({ data }) => {
         setLineItemID(cart.lineItems.length)
       }
     })()
-  }, [selectedVariants, product.variants])
+  }, [selectedVariants, product.variants, getCart])
 
   const addToCart = () => {
     pushToCart({
@@ -178,6 +179,11 @@ const Product = ({ data }) => {
       stripeId: product.id,
     })
     setLineItemID(lineItemID + 1)
+    setButtonText("ADDED!")
+    setCustomization("")
+    setTimeout(() => {
+      setButtonText("ADD TO CART")
+    }, 2000)
   }
   return (
     <Layout>
@@ -226,16 +232,13 @@ const Product = ({ data }) => {
                     <textarea
                       id={product.customization.title}
                       name={product.customization.title}
+                      value={customization}
                       onChange={e => setCustomization(e.target.value)}
                     ></textarea>
                   </div>
                 )}
                 <div className="button-wrapper">
-                  <input
-                    type="button"
-                    value="ADD TO CART"
-                    onClick={addToCart}
-                  />
+                  <input type="button" value={buttonText} onClick={addToCart} />
                 </div>
               </form>
             </Col>

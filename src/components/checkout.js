@@ -1,21 +1,28 @@
 import React, { useState } from "react"
 import { loadStripe } from "@stripe/stripe-js"
+import styled from "styled-components"
 
-const buttonStyles = {
-  fontSize: "13px",
-  textAlign: "center",
-  color: "#000",
-  padding: "12px 60px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "rgb(255, 178, 56)",
-  borderRadius: "6px",
-  letterSpacing: "1.5px",
-}
+const ButtonWrapper = styled.div`
+  border: 4px solid var(--primary-dark);
+  height: 74px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 300px;
 
-const buttonDisabledStyles = {
-  opacity: "0.5",
-  cursor: "not-allowed",
-}
+  button {
+    background-color: var(--primary-dark);
+    border-radius: 0;
+    border: 0;
+    color: var(--accent-light);
+    display: block;
+    font-family: var(--button-font-fat);
+    font-size: 2rem;
+    padding: 20px;
+    width: 100%;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+`
 
 let stripePromise
 const getStripe = () => {
@@ -52,15 +59,11 @@ const Checkout = ({ lineItems }) => {
   }
 
   return (
-    <button
-      disabled={loading}
-      style={
-        loading ? { ...buttonStyles, ...buttonDisabledStyles } : buttonStyles
-      }
-      onClick={redirectToCheckout}
-    >
-      Checkout
-    </button>
+    <ButtonWrapper>
+      <button disabled={loading} onClick={redirectToCheckout}>
+        CHECKOUT
+      </button>
+    </ButtonWrapper>
   )
 }
 
