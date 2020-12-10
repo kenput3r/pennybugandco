@@ -7,7 +7,6 @@ const isBrowser = typeof window !== "undefined"
 const getCart = () => {
   const items = localStorage.getItem("cartItems")
   const cartItems = JSON.parse(items)
-  console.log(items)
   return Promise.resolve(cartItems)
 }
 
@@ -28,11 +27,8 @@ const pushToCart = async item => {
 const removeFromCart = id => {
   const items = localStorage.getItem("cartItems")
   const cartItems = JSON.parse(items)
-  console.log(cartItems)
   const index = cartItems.lineItems.findIndex(item => item.id === id)
-  console.log(index)
   cartItems.lineItems.splice(index, 1)
-  console.log(cartItems)
   const itemsJSON = JSON.stringify(cartItems)
   localStorage.setItem("cartItems", itemsJSON)
   return Promise.resolve("cart updated")

@@ -36,8 +36,9 @@ const Container = styled.div`
   }
 `
 
-const Carousel = ({ slides }) => {
+const Carousel = ({ slides, openDialog }) => {
   const settings = {
+    arrows: false,
     customPaging: function (i) {
       return (
         <a>
@@ -56,6 +57,10 @@ const Carousel = ({ slides }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+  const handleClick = (e, slide) => {
+    e.preventDefault()
+    openDialog(slide)
+  }
   return (
     <Container>
       <div className="wrapper">
@@ -63,7 +68,9 @@ const Carousel = ({ slides }) => {
         <Slider {...settings}>
           {slides.map(slide => (
             <div key={slide.src.id}>
-              <Img fluid={slide.src.childImageSharp.fluid} alt={slide.alt} />
+              <a href="/" role="button" onClick={e => handleClick(e, slide)}>
+                <Img fluid={slide.src.childImageSharp.fluid} alt={slide.alt} />
+              </a>
             </div>
           ))}
         </Slider>

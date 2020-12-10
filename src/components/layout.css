@@ -213,6 +213,9 @@ button::-moz-focus-inner {
 button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
+button:focus {
+  outline-color: var(--accent-light);
+}
 fieldset {
   border: 1px solid silver;
   padding: 0.35em 0.625em 0.75em;
@@ -614,4 +617,47 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+@media only screen and (max-width: 1024px) {
+  [data-reach-dialog-content] {
+    width: 95vw !important;
+    padding: 0.5rem !important;
+  }
+
+  [data-reach-dialog-content] img {
+    margin-bottom: 0 !important;
+  }
+}
+
+[data-reach-dialog-content] .gatsby-image-wrapper[style] {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+[data-reach-dialog-content] img[aria-hidden="true"][style] {
+  max-width: 100% !important;
+  height: auto !important;
+  position: relative !important;
+}
+
+[data-reach-dialog-content] img[style] {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+[data-reach-dialog-content] .close-button {
+  background-color: var(--accent-dark);
+  color: var(--primary-dark);
+  font-family: var(--button-font);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+textarea:focus,
+select:focus {
+  outline-color: var(--accent-light);
+}
+
+::placeholder {
+  color: var(--primary-light);
 }

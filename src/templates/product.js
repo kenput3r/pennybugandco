@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useContext } from "react"
 import styled from "styled-components"
+import { Dialog } from "@reach/dialog"
+import "@reach/dialog/styles.css"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Carousel from "../components/Carousel"
@@ -30,6 +33,7 @@ const Wrapper = styled.div`
   width: 1600px;
   max-width: 100%;
   margin: 0 auto;
+  margin-bottom: 3rem;
 
   h1 {
     color: var(--primary-dark);
@@ -147,10 +151,12 @@ const Product = ({ data }) => {
   const [lineItemID, setLineItemID] = useState(0)
   const [customization, setCustomization] = useState("")
   const [buttonText, setButtonText] = useState("ADD TO CART")
+  const [showDialog, setShowDialog] = useState(false)
+  const [dialogContent, setDialogContent] = useState(product.images[0])
 
   useEffect(() => {
     //set initial selected variants
-    if (selectedVariants === null) {
+    if (selectedVariants === null && product.variants) {
       const initial_variants = {}
       for (let i = 0; i < product.variants.length; i++) {
         const variant = product.variants[i]
@@ -185,6 +191,12 @@ const Product = ({ data }) => {
       setButtonText("ADD TO CART")
     }, 2000)
   }
+
+  const openDialog = slide => {
+    setDialogContent(slide)
+    setShowDialog(true)
+  }
+
   return (
     <Layout>
       <SEO title={product.title} />
@@ -192,14 +204,14 @@ const Product = ({ data }) => {
         <Wrapper>
           <Row>
             <Col className="padded small-100 carousel">
-              <Carousel slides={product.images} />
+              <Carousel slides={product.images} openDialog={openDialog} />
             </Col>
             <Col className="padded small-100 details">
               <h1>{product.title}</h1>
               <p className="description">{product.description}</p>
               <p className="price">${product.price} USD</p>
               <form>
-                {product.variants.length &&
+                {product.variants &&
                   product.variants.map((variant, index) => (
                     <Row key={variant + "-" + index}>
                       <Col className="select-label">
@@ -233,6 +245,8 @@ const Product = ({ data }) => {
                       id={product.customization.title}
                       name={product.customization.title}
                       value={customization}
+                      maxLength={product.customization.character_cap}
+                      placeholder={`Max length: ${product.customization.character_cap}`}
                       onChange={e => setCustomization(e.target.value)}
                     ></textarea>
                   </div>
@@ -245,6 +259,19 @@ const Product = ({ data }) => {
           </Row>
         </Wrapper>
         <img src={bottomFlower} alt="decorative flower" className="flower" />
+        <Dialog
+          isOpen={showDialog}
+          onDismiss={() => setShowDialog(false)}
+          aria-label="pop up with full sized image"
+        >
+          <Img
+            fixed={dialogContent.src.childImageSharp.fixed}
+            alt={dialogContent.alt}
+          />
+          <button className="close-button" onClick={() => setShowDialog(false)}>
+            &times; close
+          </button>
+        </Dialog>
       </SwirlContainer>
     </Layout>
   )

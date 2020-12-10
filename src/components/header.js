@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { SiteContext } from "./context"
-import etsyLogo from "../images/etsy-logo.png"
+import cartIcon from "../images/cart-icon.png"
 import hamburger from "../images/hamburger.png"
 
 const StyledHeader = styled.header`
@@ -29,11 +29,11 @@ const StyledHeader = styled.header`
     margin-bottom: 0;
     @media (max-width: 991px) {
       padding-right: 15px;
+      font-size: 1.5rem;
     }
     @media (max-width: 767px) {
       border-right: 0;
       padding-right: 0;
-      font-size: 1.5rem;
     }
   }
 
@@ -74,7 +74,7 @@ const StyledHeader = styled.header`
   }
 
   img {
-    height: 2rem;
+    height: 1.2rem;
   }
 
   .burger-wrapper {
@@ -141,26 +141,18 @@ const Header = ({ page }) => {
       <GridItem className="nav-wrapper" flex={3} align="flex-start">
         <nav aria-label="Primary">
           <ul>
-            {page !== "home" && (
-              <li>
-                <Link to="/">HOME</Link>
-              </li>
-            )}
+            <li>
+              <Link to="/">HOME</Link>
+            </li>
             <li>
               <Link to="/products">SHOP</Link>
             </li>
             <li>
-              <Link to="/">FAQ</Link>
-            </li>
-            <li>
               <Link to="/">CONTACT</Link>
             </li>
-            <li>
-              <Link to="/cart">CART</Link>
-            </li>
             <li className="image-link">
-              <Link to="/">
-                <img src={etsyLogo} alt="Etsy" />
+              <Link to="/cart">
+                <img src={cartIcon} alt="Etsy" />
               </Link>
             </li>
           </ul>

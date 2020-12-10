@@ -52,7 +52,7 @@ const Thanks = () => {
         }
       }
     })()
-  }, [log_order, get_customer, getCart])
+  }, [getCart])
 
   return (
     <Layout>

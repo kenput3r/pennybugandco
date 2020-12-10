@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import bottomFlower from "../images/product-flower-bottom.png"
 
 const Container = styled.div`
@@ -27,7 +28,8 @@ const Container = styled.div`
       border: 0;
       color: var(--primary-medium);
       font-family: var(--button-font);
-      padding: 0;
+      padding: 2px;
+      margin-bottom: 2px;
     }
   }
 
@@ -104,6 +106,9 @@ const Col = styled.div`
 
   &.filters {
     flex: 2;
+    @media (max-width: 991px) {
+      flex: 3;
+    }
     @media (max-width: 767px) {
       box-sizing: border-box;
       color: #fff;
@@ -145,6 +150,22 @@ const Col = styled.div`
       :hover {
         cursor: pointer;
       }
+      ::after {
+        content: "";
+        display: table;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+      }
+      &.active:focus {
+        ::after {
+          border-bottom: 3px solid transparent;
+        }
+      }
+      &.active {
+        ::after {
+          border-bottom: 3px solid var(--accent-dark);
+        }
+      }
     }
     li {
       li {
@@ -179,6 +200,7 @@ const Products = ({ data }) => {
   }
   return (
     <Layout>
+      <SEO title="Products" />
       <Container>
         <Wrapper>
           <h1>Products</h1>
@@ -199,56 +221,96 @@ const Products = ({ data }) => {
               </div>
               <ul className="main-list">
                 <li>
-                  <button onClick={() => setFilter("")}>ALL PRODUCTS</button>
+                  <button
+                    className={filter === "" ? `active` : ``}
+                    onClick={() => setFilter("")}
+                  >
+                    ALL PRODUCTS
+                  </button>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("Box Sets")}>
+                  <button
+                    className={filter === "Box Sets" ? `active` : ``}
+                    onClick={() => setFilter("Box Sets")}
+                  >
                     BOX SETS
                   </button>
                   <ul>
                     <li>
-                      <button onClick={() => setFilter("Mr. & Mrs.")}>
+                      <button
+                        className={filter === "Mr. & Mrs." ? `active` : ``}
+                        onClick={() => setFilter("Mr. & Mrs.")}
+                      >
                         Mr. &amp; Mrs.
                       </button>
                     </li>
                     <li>
-                      <button onClick={() => setFilter("Baby")}>Baby</button>
+                      <button
+                        className={filter === "Baby" ? `active` : ``}
+                        onClick={() => setFilter("Baby")}
+                      >
+                        Baby
+                      </button>
                     </li>
                     <li>
-                      <button onClick={() => setFilter("Pet")}>Pet</button>
+                      <button
+                        className={filter === "Pet" ? `active` : ``}
+                        onClick={() => setFilter("Pet")}
+                      >
+                        Pet
+                      </button>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("Ornaments")}>
+                  <button
+                    className={filter === "Ornaments" ? `active` : ``}
+                    onClick={() => setFilter("Ornaments")}
+                  >
                     Ornaments
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("Cups")}>Cups</button>
+                  <button
+                    className={filter === "Cups" ? `active` : ``}
+                    onClick={() => setFilter("Cups")}
+                  >
+                    Cups
+                  </button>
                   <ul>
                     <li>
-                      <button onClick={() => setFilter("Mugs")}>Mugs</button>
-                    </li>
-                    <li>
-                      <button onClick={() => setFilter("Flutes")}>
-                        Flutes
+                      <button
+                        className={filter === "Mugs" ? `active` : ``}
+                        onClick={() => setFilter("Mugs")}
+                      >
+                        Mugs
                       </button>
                     </li>
                     <li>
-                      <button onClick={() => setFilter("Tumblers")}>
+                      <button
+                        className={filter === "Tumblers" ? `active` : ``}
+                        onClick={() => setFilter("Tumblers")}
+                      >
                         Tumblers
                       </button>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("Bandanas")}>
+                  <button
+                    className={filter === "Bandanas" ? `active` : ``}
+                    onClick={() => setFilter("Bandanas")}
+                  >
                     Bandanas
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("Cards")}>Cards</button>
+                  <button
+                    className={filter === "Cards" ? `active` : ``}
+                    onClick={() => setFilter("Cards")}
+                  >
+                    Cards
+                  </button>
                 </li>
               </ul>
             </Col>
@@ -300,7 +362,7 @@ export const query = graphql`
             alt
             src {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 500, maxHeight: 500, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
                 }
                 id

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kenneth Lyerly <hey@ken.dev>",
   "dependencies": {
+    "@reach/dialog": "^0.12.1",
     "@stripe/stripe-js": "^1.11.0",
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",

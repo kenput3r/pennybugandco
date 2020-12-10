@@ -66,6 +66,10 @@ const Container = styled.div`
       font-family: var(--button-font-fat);
     }
   }
+  .shipping-message {
+    color: var(--primary-light);
+    font-style: italic;
+  }
 `
 const Wrapper = styled.div`
   height: 100%;
@@ -193,10 +197,15 @@ const Cart = () => {
                     <Row key={item.id} className="product">
                       <Col className="s100">
                         <div className="product-image-wrapper">
-                          <Img
-                            fluid={item.image.src.childImageSharp.fluid}
-                            alt={item.image.src.alt}
-                          />
+                          <Link
+                            to={`/products/${item.slug}`}
+                            title={item.title}
+                          >
+                            <Img
+                              fluid={item.image.src.childImageSharp.fluid}
+                              alt={item.image.src.alt}
+                            />
+                          </Link>
                         </div>
                       </Col>
                       <Col className="w-100">
@@ -230,6 +239,12 @@ const Cart = () => {
               </Row>
               <Row className="justify-end">
                 <Col>
+                  <div className="shipping-message">
+                    <p>
+                      *Free delivery in counties of Orange and Riverside. <br />
+                      Some orders may require an additional shipping charge.
+                    </p>
+                  </div>
                   <div className="total">
                     <span className="label">Total</span>{" "}
                     <span>${cartTotal}</span>

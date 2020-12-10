@@ -6,7 +6,7 @@
     "slug": "cupid-box",
     "description": "The very married Christmas box. This box includes two mugs (Mr. & Mrs.) + a personalized ornament!",
     "price": 29,
-    "images": [{"src": "./images/cupid-box-1.jpg", "alt": ""}, {"src": "./images/cupid-box-2.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "images": [{"src": "./images/cupid-box-1.jpg", "alt": "Green Mr. & Mrs. mugs and custom ornament"}, {"src": "./images/cupid-box-2.jpg", "alt": "White Mr. & Mrs. mugs with custom ornament"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
     "customization": {"title": "Ornament Text", "character_cap": 40},
     "tags": ["Cups", "Mugs", "Ornaments", "Mr. & Mrs.", "Box Sets"]
@@ -18,7 +18,7 @@
     "slug": "rudolph-box",
     "description": "Rudolph 🦌 Holiday Mug, Voluspa Candy Cane candle, Personalized Ornament, Fleece Blanket & Holiday cookie",
     "price": 45,
-    "images": [{"src": "./images/rudolph-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
+    "images": [{"src": "./images/rudolph-box-1.jpg", "alt": "Red, green and blue fleece blanket, red and gold ornament, green mug reading merry & bright, candle, and matches"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
     "customization": {"title": "Ornament Text", "character_cap": 40},
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
@@ -29,7 +29,7 @@
     "slug": "blitzen-box",
     "description": "Blitzen 🦌 Holiday mug, Voluspa Candy Cane candle, Personalized ornament & Holiday cookie",
     "price": 38,
-    "images": [{"src": "./images/blitzen-box-1.jpg", "alt": ""}, {"src": "./images/large-box.jpg", "alt": ""}],
+    "images": [{"src": "./images/blitzen-box-1.jpg", "alt": "Red and gold ornament, candy cane, candle, white mug reading merry & bright"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
     "customization": {"title": "Ornament Text", "character_cap": 40},
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
@@ -40,7 +40,7 @@
     "slug": "dasher-box",
     "description": "Dasher 🦌 Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
     "price": 28,
-    "images": [{"src": "./images/dasher-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "images": [{"src": "./images/dasher-box-1.jpg", "alt": "Green mug reading keep sleighin' it!, matches, candy cane candle"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
     "tags": ["Cups", "Mugs", "Box Sets"]
   },
@@ -50,9 +50,75 @@
     "slug": "prancer-box",
     "description": "For the fur kids 🐕 that made it on the nice list. Double sided bandana, ornament and dog treat from the local dog bakery",
     "price": 20,
-    "images": [{"src": "./images/prancer-box-1.jpg", "alt": ""}, {"src": "./images/small-box.jpg", "alt": ""}],
+    "images": [{"src": "./images/prancer-box-1.jpg", "alt": "Dog bandana, bone shaped ornament, dog cookie"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants":[{"option_name": "Bandana Size", "options": ["Small", "Medium", "Large"]}],
     "customization": {"title": "Ornament Text", "character_cap": 15},
-    "tags": ["Bandanas", "Pet", "Box Sets"]
+    "tags": ["Bandanas", "Pet", "Box Sets", "Ornaments"]
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM2",
+    "title": "Teacher Box",
+    "slug": "teacher-box",
+    "description": "🍎 Make a teacher’s day! If anyone deserves it, it’s them! Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit ✨",
+    "price": 32,
+    "images": [{"src": "./images/teacher-box-1.jpg", "alt": "Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit"}, {"src": "./images/teacher-box-2.jpg", "alt": "Teacher holding the Pencil Tumbler and wearing the tote bag"}, {"src": "./images/teacher-box-3.jpg", "alt": "Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
+    "variants": null,
+    "customization": {"title": "Name On Tumbler", "character_cap": 25},
+    "tags": ["Tumblers", "Cups", "Box Sets"]
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM3",
+    "title": "Teacher Tote Bag",
+    "slug": "teacher-tote-bag",
+    "description": "🍎 Make a teacher’s day! If anyone deserves it, it’s them!",
+    "price": 12,
+    "images": [{"src": "./images/teacher-tote.jpg", "alt": "Tote bag reading 'It takes a big heart to help shape little minds'"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
+    "variants": null,
+    "customization": null,
+    "tags": []
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM4",
+    "title": "Pencil Tumbler",
+    "slug": "pencil-tumbler",
+    "description": "🍎 Make a teacher’s day! Personalize the tumbler and get that A.",
+    "price": 15,
+    "images": [{"src": "./images/pencil-tumbler.jpg", "alt": "Stainless steel tumbler with a pencil design on it with custom lettering"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
+    "variants": null,
+    "customization": {"title": "Name On Tumbler", "character_cap": 25},
+    "tags": ["Cups", "Tumblers"]
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM5",
+    "title": "Best Teacher Picture Frame",
+    "slug": "best-teacher-picture-frame",
+    "description": "🍎 Make a teacher’s day! Personalize the tumbler and get that A.",
+    "price": 7,
+    "images": [{"src": "./images/best-teacher-frame.jpg", "alt": "Black picture frame with text reading 'you are the best teacher'"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
+    "variants": null,
+    "customization": null,
+    "tags": []
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM6",
+    "title": "Baby Box",
+    "slug": "baby-box",
+    "description": "🎀 Personalized onesie, Swaddle with matching head band, teething toy and Sugarfina gummies",
+    "price": 32,
+    "images": [{"src": "./images/baby-box-1.jpg", "alt": "Personalized onesie, Swaddle with matching head band, teething toy and Sugarfina gummies"}, {"src": "./images/baby-box-2.jpg", "alt": "Swaddle color and pattern options"}, {"src": "./images/baby-box-girl-box.jpg", "alt": "The box's packaging. White box with pink ribbon and a pink stroller ornament"}],
+    "variants":[{"option_name": "Swaddle Color", "options": ["White / Purple", "Blue / Pink", "Black / Pink"]}],
+    "customization": {"title": "Name On Onsie", "character_cap": 25},
+    "tags": ["Baby", "Box Sets"]
+  },
+  {
+    "id": "prod_IWCtAiyeZ2xPKM7",
+    "title": "Christmas Card",
+    "slug": "christmas-card",
+    "description": "Don’t forget the Christmas card. Blank inside so you can spread holiday joy your way ✨",
+    "price": 2,
+    "images": [{"src": "./images/christmas-card-1.jpg", "alt": "Card with text reading 'Merry Christmas'"}, {"src": "./images/christmas-card-2.jpg", "alt": "Card with a tree and text reading 'Merry'"}, {"src": "./images/christmas-card-3.jpg", "alt": "Card with mistletoe with text reading 'mistletoe'"}],
+    "variants":[{"option_name": "Card Design", "options": ["Merry Christmas", "Christmas Tree", "Mistletoe"]}],
+    "customization": null,
+    "tags": ["Cards"]
   }
 ]
