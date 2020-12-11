@@ -28,7 +28,7 @@ const log_order = async orderInfo => {
     "Content-type": "application/json",
     Accept: "application/json",
   }
-  const response = await fetch("http://localhost:8888/api/log_order", {
+  const response = await fetch("/api/log_order", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ orderInfo }),
@@ -47,7 +47,7 @@ const get_customer = async session_id => {
     "Content-type": "application/json",
     Accept: "application/json",
   }
-  const response = await fetch("http://localhost:8888/api/get_customer", {
+  const response = await fetch("/api/get_customer", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ session_id }),
