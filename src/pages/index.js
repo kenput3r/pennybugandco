@@ -104,6 +104,9 @@ const Content = styled.div`
       font-weight: bold;
       line-height: 1.2;
       text-align: justify;
+      @media (max-width: 500px) {
+        text-align: center;
+      }
     }
   }
 

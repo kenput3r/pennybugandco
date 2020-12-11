@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   padding: 10px;
   width: 100%;
   max-width: 100vw;
-  z-index: 11;
+  z-index: 13;
   position: fixed;
   @media (max-width: 767px) {
     justify-content: space-between;

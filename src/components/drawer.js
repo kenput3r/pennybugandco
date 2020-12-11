@@ -24,7 +24,7 @@ const Container = styled.div`
   transform: ${({ isDrawerOpen }) =>
     isDrawerOpen ? "translateX(0)" : "translateX(-100%)"};
   width: 80vw;
-  z-index: 10;
+  z-index: 12;
   @media (min-width: 768px) {
     display: none;
   }
