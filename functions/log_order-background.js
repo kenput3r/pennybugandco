@@ -45,22 +45,32 @@ async function main(order) {
   })
   console.log(transporter)
   // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"Penny Bug & Co 🐾 " <info@pennybug.co>', // sender address
-    to: `info@pennybug.co, ${customer_email}`, // list of receivers
-    subject: `🎁`, // Subject line
-    text: `Order for ${customer_email}`, // plain text body
-    html: `<div>Order Number: ${customer.session.id}<br />
+  let info = await transporter.sendMail(
+    {
+      from: '"Penny Bug & Co 🐾 " <info@pennybug.co>', // sender address
+      to: `info@pennybug.co, ${customer_email}`, // list of receivers
+      subject: `🎁`, // Subject line
+      text: `Order for ${customer_email}`, // plain text body
+      html: `<div>Order Number: ${customer.session.id}<br />
           For: ${customer_name}${customer_email}<br />
           ${listItems(lineItems)}
           Total: ${total_paid}<br />
           Deliver To: ${customer_address.line1}, ${
-      customer_address.line2 ? customer_address.line2 + ", " : ""
-    }${customer_address.city}, ${customer_address.state}, ${
-      customer_address.postal_code
-    }
+        customer_address.line2 ? customer_address.line2 + ", " : ""
+      }${customer_address.city}, ${customer_address.state}, ${
+        customer_address.postal_code
+      }
     </div>`, // html body
-  })
+    },
+    (err, info) => {
+      console.log("========sendMail callback==========")
+      if (err) {
+        console.log(err)
+      }
+      console.log(info.envelope)
+      console.log(info.messageId)
+    }
+  )
 
   console.log("info", info)
 
