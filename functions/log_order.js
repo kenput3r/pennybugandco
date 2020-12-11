@@ -63,13 +63,18 @@ async function main(order) {
   })
 
   // send mail with defined transport object
-  transporter.sendMail(emailContents, function (err, info) {
-    console.log("========sendMail callback==========")
-    if (err) {
-      console.log(err)
-    }
-    console.log(info.envelope)
-    console.log(info.messageId)
+  const info = await new Promise((res, rej) => {
+    console.log("awaiting a promise")
+    transporter.sendMail(emailContents, function (err, info) {
+      console.log("========sendMail callback==========")
+      if (err) {
+        console.log(err)
+        return rej(err)
+      }
+      console.log(info.envelope)
+      console.log(info.messageId)
+      res("email sent")
+    })
   })
 
   // console.log("Message sent: %s", info.messageId)
