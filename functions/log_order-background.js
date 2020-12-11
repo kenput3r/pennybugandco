@@ -103,7 +103,29 @@
 const nodemailer = require("nodemailer")
 require("dotenv").config()
 
+function listItems(lineItems) {
+  let return_string = "<div>"
+  for (let i = 0; i < lineItems.length; i++) {
+    const item = lineItems[i]
+    return_string += `<br />Item ${i + 1}: ${item.title}<br />`
+    const variants = Object.keys(item.variants)
+    for (let variant of variants) {
+      return_string += `${variant}: ${item.variants[variant]}<br />`
+    }
+    return_string += `Customization: ${item.customization}<br />`
+  }
+  return_string += `<br /></div>`
+  return return_string
+}
+
 exports.handler = function (event, context, callback) {
+  const body = JSON.parse(event.body)
+  const order = body.orderInfo
+  const { customer, lineItems } = order
+  const customer_email = customer.customer.email
+  const customer_name = customer.customer.name ? order.customer.name + " " : ""
+  const customer_address = customer.session.shipping.address
+  const total_paid = customer.session.amount_total
   let transporter = nodemailer.createTransport({
     host: "smtp-relay.sendinblue.com",
     port: 587,
@@ -115,12 +137,25 @@ exports.handler = function (event, context, callback) {
   })
   console.log(event.body)
 
+  const html = `<div>Order Number: ${customer.session.id}<br />
+      For: ${customer_name}${customer_email}<br />
+      ${listItems(lineItems)}
+      Total: ${total_paid}<br />
+      Deliver To: ${customer_address.line1}, ${
+    customer_address.line2 ? customer_address.line2 + ", " : ""
+  }${customer_address.city}, ${customer_address.state}, ${
+    customer_address.postal_code
+  }
+    </div>
+  `
+
   transporter.sendMail(
     {
       from: process.env.SEND_BLUE_EMAIL_ADDRESS,
       to: process.env.SEND_BLUE_EMAIL_ADDRESS,
       subject: "New order placed" + new Date().toLocaleString(),
       text: "Here are the new order details",
+      html: html,
     },
     function (error, info) {
       if (error) {
