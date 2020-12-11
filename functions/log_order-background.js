@@ -49,9 +49,9 @@ async function main(order) {
   // send mail with defined transport object
   transporter.sendMail(
     {
-      from: '"Penny Bug & Co 🐾 " <info@pennybug.co>', // sender address
-      to: `info@pennybug.co, ${customer_email}`, // list of receivers
-      subject: `🎁`, // Subject line
+      from: '"Penny Bug & Co" <info@pennybug.co>', // sender address
+      to: `info@pennybug.co`, // list of receivers
+      subject: `New Penny Bug Order`, // Subject line
       text: `Order for ${customer_email}`, // plain text body
       html: `<div>Order Number: ${customer.session.id}<br />
           For: ${customer_name}${customer_email}<br />
