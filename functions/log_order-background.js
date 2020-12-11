@@ -65,17 +65,21 @@ async function main(order) {
   // send mail with defined transport object
   const info = await new Promise((res, rej) => {
     console.log("awaiting a promise")
-    transporter.sendMail(emailContents, function (err, info) {
-      console.log("========sendMail callback==========")
-      if (err) {
-        console.log(err)
-        return rej(err)
-      }
-      console.log(info.envelope)
-      console.log(info.messageId)
-      res("email sent")
-    })
+    return transporter
+      .sendMail(emailContents)
+      .then(results => {
+        console.log("========sendMail callback==========")
+        console.log(results)
+        res("email sent")
+      })
+      .catch(error => {
+        console.log(error)
+        rej("error")
+      })
   })
+
+  console.log("info")
+  console.log(info)
 
   // console.log("Message sent: %s", info.messageId)
   // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
