@@ -20,11 +20,30 @@ function listItems(lineItems) {
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main(order) {
+  console.log("=======Main Function======")
   const { customer, lineItems } = order
   const customer_email = customer.customer.email
   const customer_name = customer.customer.name ? order.customer.name + " " : ""
   const customer_address = customer.session.shipping.address
   const total_paid = customer.session.amount_total
+
+  const emailContents = {
+    from: '"Penny Bug & Co" <info@pennybug.co>', // sender address
+    to: `info@pennybug.co`, // list of receivers
+    subject: `New Penny Bug Order`, // Subject line
+    text: `Order for ${customer_email}`, // plain text body
+    html: `<div>Order Number: ${customer.session.id}<br />
+      For: ${customer_name}${customer_email}<br />
+      ${listItems(lineItems)}
+      Total: ${total_paid}<br />
+      Deliver To: ${customer_address.line1}, ${
+      customer_address.line2 ? customer_address.line2 + ", " : ""
+    }${customer_address.city}, ${customer_address.state}, ${
+      customer_address.postal_code
+    }
+      </div>
+    `, // html body
+  }
 
   // let transporter = nodemailer.createTransport(
   //   smtpTransport({
@@ -36,9 +55,7 @@ async function main(order) {
   //   })
   // )
   let transporter = nodemailer.createTransport({
-    host: "smtp-relay.sendinblue.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    service: "SendinBlue",
     auth: {
       user: process.env.SEND_BLUE_EMAIL_ADDRESS,
       pass: process.env.SEND_BLUE_EMAIL_PASSWORD,
@@ -47,6 +64,7 @@ async function main(order) {
   })
 
   transporter.verify(function (error, success) {
+    console.log("=======verifying transporter========")
     if (error) {
       console.log(error)
     } else {
@@ -55,32 +73,14 @@ async function main(order) {
   })
 
   // send mail with defined transport object
-  transporter.sendMail(
-    {
-      from: '"Penny Bug & Co" <info@pennybug.co>', // sender address
-      to: `info@pennybug.co`, // list of receivers
-      subject: `New Penny Bug Order`, // Subject line
-      text: `Order for ${customer_email}`, // plain text body
-      html: `<div>Order Number: ${customer.session.id}<br />
-          For: ${customer_name}${customer_email}<br />
-          ${listItems(lineItems)}
-          Total: ${total_paid}<br />
-          Deliver To: ${customer_address.line1}, ${
-        customer_address.line2 ? customer_address.line2 + ", " : ""
-      }${customer_address.city}, ${customer_address.state}, ${
-        customer_address.postal_code
-      }
-    </div>`, // html body
-    },
-    function (err, info) {
-      console.log("========sendMail callback==========")
-      if (err) {
-        console.log(err)
-      }
-      console.log(info.envelope)
-      console.log(info.messageId)
+  transporter.sendMail(emailContents, function (err, info) {
+    console.log("========sendMail callback==========")
+    if (err) {
+      console.log(err)
     }
-  )
+    console.log(info.envelope)
+    console.log(info.messageId)
+  })
 
   // console.log("Message sent: %s", info.messageId)
   // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
