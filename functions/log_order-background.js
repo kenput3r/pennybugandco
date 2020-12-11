@@ -45,6 +45,7 @@ async function main(order) {
     },
   })
   console.log(transporter)
+  console.log(transporter.sendMail)
   // send mail with defined transport object
   transporter.sendMail(
     {
