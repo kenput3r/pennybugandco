@@ -34,6 +34,7 @@ async function main(order) {
       pass: process.env.EMAIL_PASSWORD,
     },
   })
+  console.log(transporter)
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"Penny Bug & Co 🐾 " <info@pennybug.co>', // sender address
