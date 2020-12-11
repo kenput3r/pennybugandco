@@ -1,5 +1,6 @@
 "use strict"
 const nodemailer = require("nodemailer")
+const smtpTransport = require("nodemailer-smtp-transport")
 require("dotenv").config()
 
 function listItems(lineItems) {
@@ -24,25 +25,25 @@ async function main(order) {
   const customer_name = customer.customer.name ? order.customer.name + " " : ""
   const customer_address = customer.session.shipping.address
   const total_paid = customer.session.amount_total
-  // create reusable transporter object using the default SMTP transport
+
+  let transporter = nodemailer.createTransport(
+    smtpTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    })
+  )
   // let transporter = nodemailer.createTransport({
-  //   host: "smtp.gmail.com",
-  //   port: 465,
+  //   host: "smtp-relay.sendinblue.com",
+  //   port: 587,
   //   secure: true, // true for 465, false for other ports
   //   auth: {
-  //     user: process.env.EMAIL_ADDRESS,
-  //     pass: process.env.EMAIL_PASSWORD,
+  //     user: process.env.SEND_BLUE_EMAIL_ADDRESS,
+  //     pass: process.env.SEND_BLUE_EMAIL_PASSWORD,
   //   },
   // })
-  let transporter = nodemailer.createTransport({
-    host: "smtp-relay.sendinblue.com",
-    port: 587,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: process.env.SEND_BLUE_EMAIL_ADDRESS,
-      pass: process.env.SEND_BLUE_EMAIL_PASSWORD,
-    },
-  })
   console.log(transporter)
   // send mail with defined transport object
   let info = await transporter.sendMail(
