@@ -15,7 +15,9 @@ const Page = styled.div`
     font-family: var(--title-font);
   }
   form {
+    padding: 5px;
     width: 480px;
+    max-width: 100%;
   }
   .form-group {
     margin-bottom: 1.45rem;
@@ -40,7 +42,7 @@ const Page = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     input {
-      width: 235px;
+      width: 230px;
       @media (max-width: 500px) {
         width: 100%;
       }
