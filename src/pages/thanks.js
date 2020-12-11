@@ -28,7 +28,7 @@ const log_order = async orderInfo => {
     "Content-type": "application/json",
     Accept: "application/json",
   }
-  const response = await fetch("/api/log_order-background", {
+  const response = await fetch("/api/log_order", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ orderInfo }),
