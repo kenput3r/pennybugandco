@@ -64,7 +64,7 @@ async function main(order) {
       }
     </div>`, // html body
     },
-    (err, info) => {
+    function (err, info) {
       console.log("========sendMail callback==========")
       if (err) {
         console.log(err)
