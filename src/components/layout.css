@@ -1,4 +1,17 @@
 @import url("https://use.typekit.net/wjo6wkw.css");
+
+:root {
+  --primary-dark: #244652;
+  --primary-medium: #546873;
+  --primary-light: #91a0a7;
+  --accent-dark: #e0b2a3;
+  --accent-light: #f3cac6;
+  --title-font: lust-script, sans-serif;
+  --body-font: Avenir;
+  --button-font-fat: abril-fatface, serif;
+  --button-font: abril-display, serif;
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -11,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: var(--body-font);
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -19,6 +32,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  overflow-x: hidden;
 }
 article,
 aside,
@@ -72,7 +86,8 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
+h1,
+.h1 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -175,6 +190,10 @@ button,
 select {
   text-transform: none;
 }
+button:hover,
+input[type="button"]:hover {
+  cursor: pointer;
+}
 [type="reset"],
 [type="submit"],
 button,
@@ -193,6 +212,9 @@ button::-moz-focus-inner {
 [type="submit"]:-moz-focusring,
 button:-moz-focusring {
   outline: 1px dotted ButtonText;
+}
+button:focus {
+  outline-color: var(--accent-light);
 }
 fieldset {
   border: 1px solid silver;
@@ -595,4 +617,47 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+@media only screen and (max-width: 1024px) {
+  [data-reach-dialog-content] {
+    width: 95vw !important;
+    padding: 0.5rem !important;
+  }
+
+  [data-reach-dialog-content] img {
+    margin-bottom: 0 !important;
+  }
+}
+
+[data-reach-dialog-content] .gatsby-image-wrapper[style] {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+[data-reach-dialog-content] img[aria-hidden="true"][style] {
+  max-width: 100% !important;
+  height: auto !important;
+  position: relative !important;
+}
+
+[data-reach-dialog-content] img[style] {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+[data-reach-dialog-content] .close-button {
+  background-color: var(--accent-dark);
+  color: var(--primary-dark);
+  font-family: var(--button-font);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+textarea:focus,
+select:focus {
+  outline-color: var(--accent-light);
+}
+
+::placeholder {
+  color: var(--primary-light);
 }
