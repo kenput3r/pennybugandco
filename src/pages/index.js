@@ -218,6 +218,8 @@ const CallToAction = styled.div`
       width: 200px;
       margin-left: -5px;
       margin-bottom: -190px;
+      position: relative;
+      z-index: 11;
       @media (max-width: 428px) {
         width: 80px;
         margin-bottom: -110px;

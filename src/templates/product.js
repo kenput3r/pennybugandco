@@ -144,6 +144,10 @@ const updateSelectedVariant = (e, setState) => {
     [name]: value,
   }))
 }
+const createMarkup = markup => {
+  return { __html: markup }
+}
+
 const Product = ({ data }) => {
   const { pushToCart, getCart } = useContext(SiteContext)
   const product = data.productsJson
@@ -208,7 +212,10 @@ const Product = ({ data }) => {
             </Col>
             <Col className="padded small-100 details">
               <h1>{product.title}</h1>
-              <p className="description">{product.description}</p>
+              <p
+                className="description"
+                dangerouslySetInnerHTML={createMarkup(product.description)}
+              />
               <p className="price">${product.price} USD</p>
               <form>
                 {product.variants &&

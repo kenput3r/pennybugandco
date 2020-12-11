@@ -55,6 +55,11 @@ const Drawer = () => {
           CART
         </Link>
       </div>
+      <div>
+        <Link to="/contact" onClick={() => setIsDrawerOpen(false)}>
+          CONTACT
+        </Link>
+      </div>
     </Container>
   )
 }

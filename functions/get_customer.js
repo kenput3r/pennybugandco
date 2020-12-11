@@ -1,7 +1,6 @@
 "use strict"
-const stripe = require("stripe")(
-  "sk_test_51Hv9qGHx7oIWq14Ji4j7cb3zoCbtV7op0z1N9Pa0KW1SikSoDQzTp6dSlE62JY60yt71mVt1N5a4j6mcSWBrgEsP0056hmQwdg"
-)
+require("dotenv").config()
+const stripe = require("stripe")(process.env.STRIPE_LIVE_KEY)
 
 exports.handler = async function (event, context) {
   const body = JSON.parse(event.body)

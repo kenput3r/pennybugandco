@@ -1,7 +1,6 @@
 [
   {
-    "id": "price_1HvArgHx7oIWq14J2uNAmkfc",
-    "realId": "prod_IWCoKPh8wAZFuQ",
+    "id": "price_1HvAOyHx7oIWq14JcUOH9atm",
     "title": "Cupid Box",
     "slug": "cupid-box",
     "description": "The very married Christmas box. This box includes two mugs (Mr. & Mrs.) + a personalized ornament!",
@@ -12,11 +11,10 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Mr. & Mrs.", "Box Sets"]
   },
   {
-    "id": "price_1HvAtuHx7oIWq14JgWxoW572",
-    "realId": "prod_IWCqeHOBI1bLTG",
+    "id": "price_1HvAQaHx7oIWq14JIfyIi97E",
     "title": "Rudolph Box",
     "slug": "rudolph-box",
-    "description": "Rudolph 🦌 Holiday Mug, Voluspa Candy Cane candle, Personalized Ornament, Fleece Blanket & Holiday cookie",
+    "description": "Rudolph <span role='img' aria-label='reindeer'>🦌</span> Holiday Mug, Voluspa Candy Cane candle, Personalized Ornament, Fleece Blanket & Holiday cookie",
     "price": 45,
     "images": [{"src": "./images/rudolph-box-1.jpg", "alt": "Red, green and blue fleece blanket, red and gold ornament, green mug reading merry & bright, candle, and matches"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
@@ -24,10 +22,10 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
-    "id": "prod_IWCqWRgvv59k68",
+    "id": "price_1HvAR8Hx7oIWq14JxktSa9Tv",
     "title": "Blitzen Box",
     "slug": "blitzen-box",
-    "description": "Blitzen 🦌 Holiday mug, Voluspa Candy Cane candle, Personalized ornament & Holiday cookie",
+    "description": "Blitzen <span role='img' aria-label='reindeer'>🦌</span> Holiday mug, Voluspa Candy Cane candle, Personalized ornament & Holiday cookie",
     "price": 38,
     "images": [{"src": "./images/blitzen-box-1.jpg", "alt": "Red and gold ornament, candy cane, candle, white mug reading merry & bright"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
@@ -35,20 +33,20 @@
     "tags": ["Cups", "Mugs", "Ornaments", "Box Sets"]
   },
   {
-    "id": "prod_IWCrOLJG1dirSV",
+    "id": "price_1HvAS3Hx7oIWq14J2JQHzaiN",
     "title": "Dasher Box",
     "slug": "dasher-box",
-    "description": "Dasher 🦌 Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
+    "description": "Dasher <span role='img' aria-label='reindeer'>🦌</span> Keep Sleighin’ mug, Voluspa Candy Cane candle & Holiday Cookie",
     "price": 28,
     "images": [{"src": "./images/dasher-box-1.jpg", "alt": "Green mug reading keep sleighin' it!, matches, candy cane candle"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants":[{"option_name": "Mug Color", "options": ["White", "Green"]}],
     "tags": ["Cups", "Mugs", "Box Sets"]
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM",
+    "id": "price_1HvATUHx7oIWq14JJi3Cg4iX",
     "title": "Prancer Box",
     "slug": "prancer-box",
-    "description": "For the fur kids 🐕 that made it on the nice list. Double sided bandana, ornament and dog treat from the local dog bakery",
+    "description": "For the fur kids <span role='img' aria-label='dog'>🐕</span> that made it on the nice list. Double sided bandana, ornament and dog treat from the local dog bakery",
     "price": 20,
     "images": [{"src": "./images/prancer-box-1.jpg", "alt": "Dog bandana, bone shaped ornament, dog cookie"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants":[{"option_name": "Bandana Size", "options": ["Small", "Medium", "Large"]}],
@@ -56,10 +54,10 @@
     "tags": ["Bandanas", "Pet", "Box Sets", "Ornaments"]
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM2",
+    "id": "price_1Hx4ILHx7oIWq14JAJerH8Nd",
     "title": "Teacher Box",
     "slug": "teacher-box",
-    "description": "🍎 Make a teacher’s day! If anyone deserves it, it’s them! Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit ✨",
+    "description": "<span role='img' aria-label='apple'>🍎</span> Make a teacher’s day! If anyone deserves it, it’s them! Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit <span role='img' aria-label='sparkle'>✨</span>",
     "price": 32,
     "images": [{"src": "./images/teacher-box-1.jpg", "alt": "Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit"}, {"src": "./images/teacher-box-2.jpg", "alt": "Teacher holding the Pencil Tumbler and wearing the tote bag"}, {"src": "./images/teacher-box-3.jpg", "alt": "Personalized tumbler, tote bag, picture frame, succulent, and an emergency kit"}, {"src": "./images/large-box.jpg", "alt": "The box's packaging. Brown craft box with red and black bow."}],
     "variants": null,
@@ -67,10 +65,10 @@
     "tags": ["Tumblers", "Cups", "Box Sets"]
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM3",
+    "id": "price_1Hx4MtHx7oIWq14Jrqtojs2S",
     "title": "Teacher Tote Bag",
     "slug": "teacher-tote-bag",
-    "description": "🍎 Make a teacher’s day! If anyone deserves it, it’s them!",
+    "description": "<span role='img' aria-label='apple'>🍎</span> Make a teacher’s day! If anyone deserves it, it’s them!",
     "price": 12,
     "images": [{"src": "./images/teacher-tote.jpg", "alt": "Tote bag reading 'It takes a big heart to help shape little minds'"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants": null,
@@ -78,10 +76,10 @@
     "tags": []
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM4",
+    "id": "price_1Hx4OKHx7oIWq14JYrMpia2J",
     "title": "Pencil Tumbler",
     "slug": "pencil-tumbler",
-    "description": "🍎 Make a teacher’s day! Personalize the tumbler and get that A.",
+    "description": "<span role='img' aria-label='apple'>🍎</span> Make a teacher’s day! Personalize the tumbler and get that A.",
     "price": 15,
     "images": [{"src": "./images/pencil-tumbler.jpg", "alt": "Stainless steel tumbler with a pencil design on it with custom lettering"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants": null,
@@ -89,10 +87,10 @@
     "tags": ["Cups", "Tumblers"]
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM5",
+    "id": "price_1Hx4PPHx7oIWq14JOWUyZdN9",
     "title": "Best Teacher Picture Frame",
     "slug": "best-teacher-picture-frame",
-    "description": "🍎 Make a teacher’s day! Personalize the tumbler and get that A.",
+    "description": "<span role='img' aria-label='apple'>🍎</span> Make a teacher’s day! Give them just the thing that tells them they are the best!.",
     "price": 7,
     "images": [{"src": "./images/best-teacher-frame.jpg", "alt": "Black picture frame with text reading 'you are the best teacher'"}, {"src": "./images/small-box.jpg", "alt": "The box's packaging. White box with red and black bow."}],
     "variants": null,
@@ -100,10 +98,10 @@
     "tags": []
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM6",
+    "id": "price_1Hx4QlHx7oIWq14JMnKbklYE",
     "title": "Baby Box",
     "slug": "baby-box",
-    "description": "🎀 Personalized onesie, Swaddle with matching head band, teething toy and Sugarfina gummies",
+    "description": "<span role='img' aria-label='ribbon'>🎀</span> Personalized onesie, Swaddle with matching head band, teething toy and Sugarfina gummies",
     "price": 32,
     "images": [{"src": "./images/baby-box-1.jpg", "alt": "Personalized onesie, Swaddle with matching head band, teething toy and Sugarfina gummies"}, {"src": "./images/baby-box-2.jpg", "alt": "Swaddle color and pattern options"}, {"src": "./images/baby-box-girl-box.jpg", "alt": "The box's packaging. White box with pink ribbon and a pink stroller ornament"}],
     "variants":[{"option_name": "Swaddle Color", "options": ["White / Purple", "Blue / Pink", "Black / Pink"]}],
@@ -111,10 +109,10 @@
     "tags": ["Baby", "Box Sets"]
   },
   {
-    "id": "prod_IWCtAiyeZ2xPKM7",
+    "id": "price_1Hx4RlHx7oIWq14Jnw9I8kgS",
     "title": "Christmas Card",
     "slug": "christmas-card",
-    "description": "Don’t forget the Christmas card. Blank inside so you can spread holiday joy your way ✨",
+    "description": "Don’t forget the Christmas card. Blank inside so you can spread holiday joy your way <span role='img' aria-label='sparkle'>✨</span>",
     "price": 2,
     "images": [{"src": "./images/christmas-card-1.jpg", "alt": "Card with text reading 'Merry Christmas'"}, {"src": "./images/christmas-card-2.jpg", "alt": "Card with a tree and text reading 'Merry'"}, {"src": "./images/christmas-card-3.jpg", "alt": "Card with mistletoe with text reading 'mistletoe'"}],
     "variants":[{"option_name": "Card Design", "options": ["Merry Christmas", "Christmas Tree", "Mistletoe"]}],

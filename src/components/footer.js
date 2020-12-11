@@ -8,7 +8,9 @@ import instagram from "../images/instagram-white.png"
 import email from "../images/email-white.png"
 
 const Container = styled.div`
-  padding-top: 30px;
+  padding-top: ${props => (props.removePadding ? 0 : "30px;")};
+  position: relative;
+  z-index: 10;
 
   footer {
     background-color: var(--primary-light);
@@ -64,8 +66,9 @@ const Footer = ({ page }) => {
       }
     }
   `)
+  const removePadding = page === "success" || page === "404"
   return (
-    <Container>
+    <Container removePadding={removePadding}>
       <footer>
         <nav>
           <a

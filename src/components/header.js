@@ -148,7 +148,7 @@ const Header = ({ page }) => {
               <Link to="/products">SHOP</Link>
             </li>
             <li>
-              <Link to="/">CONTACT</Link>
+              <Link to="/contact">CONTACT</Link>
             </li>
             <li className="image-link">
               <Link to="/cart">

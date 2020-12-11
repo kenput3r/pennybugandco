@@ -28,7 +28,7 @@ let stripePromise
 const getStripe = () => {
   if (!stripePromise) {
     stripePromise = loadStripe(
-      "pk_test_51Hv9qGHx7oIWq14JbE7C4sEdpj2fjpbICnW4opW8culJ9SBRZjgPu2O2DisTMLZP4TmtB2nPkUNXVSR7HUVAOu4800CrkUsBEe"
+      "pk_live_51Hv9qGHx7oIWq14JsaIyjgmEoQlOhSb2n8Bw3Q9HvBtFYvpITX8Me6LwAkSbDakiaIfOH0UvkWcBeMOClmsYcS6C00Iozlmftg"
     )
   }
   return stripePromise
@@ -45,8 +45,8 @@ const Checkout = ({ lineItems }) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: lineItems,
-      successUrl: `http://localhost:8888/thanks/?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: `http://localhost:8000/`,
+      successUrl: `https://www.pennybug.co/thanks/?session_id={CHECKOUT_SESSION_ID}`,
+      cancelUrl: `https://www.pennybug.co/`,
       shippingAddressCollection: {
         allowedCountries: ["US", "CA"],
       },

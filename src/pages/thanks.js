@@ -1,6 +1,27 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext, useState } from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
+import styled from "styled-components"
 import { SiteContext } from "../components/context"
+
+const Page = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 360px);
+  .message {
+    max-width: 480px;
+  }
+  h1 {
+    color: var(--primary-dark);
+    font-family: var(--title-font);
+  }
+  a {
+    color: var(--accent-dark);
+    font-weight: bold;
+  }
+`
 
 const log_order = async orderInfo => {
   const headers = {
@@ -37,11 +58,13 @@ const get_customer = async session_id => {
 
 const Thanks = () => {
   const { getCart } = useContext(SiteContext)
+  const [hasSession, setHasSession] = useState(true)
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
     const session_id = urlParams.get("session_id")
     ;(async () => {
       if (session_id) {
+        setHasSession(true)
         const cart = await getCart()
         const customer = await get_customer(session_id)
         console.log(customer)
@@ -50,13 +73,45 @@ const Thanks = () => {
           log_order(orderInfo)
           localStorage.removeItem("cartItems")
         }
+      } else {
+        setHasSession(false)
       }
     })()
   }, [getCart])
 
   return (
     <Layout>
-      <div>thank you for your order</div>
+      <Page>
+        {hasSession ? (
+          <div className="message">
+            <h1>Thanks!</h1>
+            <p>
+              Thank you for your order{" "}
+              <span role="img" aria-label="dancing">
+                💃
+              </span>
+            </p>
+            <p>
+              Look for an email with your order info. Have questions?{" "}
+              <Link to="/contact">Send us a message</Link>!
+            </p>
+          </div>
+        ) : (
+          <div className="message">
+            <p>
+              Oh no{" "}
+              <span role="img" aria-label="headache">
+                💆‍♀️
+              </span>{" "}
+              It looks like your session has expired.{" "}
+            </p>
+            <p>
+              If you are looking for info on your order, check your email. Still
+              have questions? <Link to="/contact">Send us a message</Link>!
+            </p>
+          </div>
+        )}
+      </Page>
     </Layout>
   )
 }

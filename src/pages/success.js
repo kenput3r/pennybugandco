@@ -13,19 +13,20 @@ const Page = styled.div`
   .background-wrapper {
     height: 100vh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
   .message {
-    color: var(--primary-dark);
+    color: #fff;
+    background-color: var(--accent-light);
+    border: 8px solid #fff;
     font-family: var(--title-font);
-    padding: 60px 10px;
+    padding: 10px;
     width: 400px;
   }
 `
 
-const NotFound = ({ data }) => {
+const Success = ({ data }) => {
   console.log(data)
   return (
     <Layout page="success">
@@ -36,9 +37,9 @@ const NotFound = ({ data }) => {
           fluid={data.backgroundImage.childImageSharp.fluid}
         >
           <h1 className="message">
-            404 Page Not Found{" "}
-            <span role="img" aria-label="confused">
-              🤷‍♀️
+            We received your message{" "}
+            <span role="img" aria-label="paw prints">
+              🐾
             </span>
           </h1>
         </BackgroundImage>
@@ -47,11 +48,11 @@ const NotFound = ({ data }) => {
   )
 }
 
-export default NotFound
+export default Success
 
 export const query = graphql`
-  query NotFoundPage {
-    backgroundImage: file(relativePath: { eq: "not-found.jpg" }) {
+  query SuccessPage {
+    backgroundImage: file(relativePath: { eq: "message-success.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2048) {
           ...GatsbyImageSharpFluid
