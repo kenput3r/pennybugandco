@@ -43,9 +43,17 @@ async function main(order) {
       user: process.env.SEND_BLUE_EMAIL_ADDRESS,
       pass: process.env.SEND_BLUE_EMAIL_PASSWORD,
     },
+    logger: true,
   })
-  console.log(transporter)
-  console.log(transporter.sendMail)
+
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log("success", success)
+    }
+  })
+
   // send mail with defined transport object
   transporter.sendMail(
     {
