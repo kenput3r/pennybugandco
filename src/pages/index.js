@@ -116,6 +116,7 @@ const Content = styled.div`
     flex: 6;
     margin-top: -15vw;
     padding-right: 30px;
+    z-index: 14;
     @media (max-width: 991px) {
       flex: none;
       width: 30vw;
@@ -129,6 +130,7 @@ const Content = styled.div`
       margin-top: -27vw;
       margin-bottom: 60px;
       width: 40vw;
+      z-index: initial;
     }
     @media (max-width: 428px) {
       width: 50vw;
@@ -247,7 +249,7 @@ const IndexPage = ({ data }) => (
             occasions. Because our commitment here is to continually give back,
             we will be featuring a local business in every box so that we can
             showcase their creative work to you and your loved ones. When you
-            buy a care package from Penny Bug &amp; Co., not only will ou make
+            buy a care package from Penny Bug &amp; Co., not only will you make
             someone's day, you will be contributing to the success of small
             businesses!
           </p>
