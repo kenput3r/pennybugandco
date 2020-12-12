@@ -35,9 +35,12 @@ const StyledHeader = styled.header`
       border-right: 0;
       padding-right: 0;
     }
+    @media (max-width: 500px) {
+      font-size: 1.2rem;
+    }
   }
 
-  nav {
+  .s-hide {
     @media (max-width: 767px) {
       display: none;
     }
@@ -122,7 +125,10 @@ const GridItem = styled.div`
       flex: 1;
     }
     @media (max-width: 767px) {
-      flex: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding-top: 5px;
     }
   }
 `
@@ -141,18 +147,18 @@ const Header = ({ page }) => {
       <GridItem className="nav-wrapper" flex={3} align="flex-start">
         <nav aria-label="Primary">
           <ul>
-            <li>
+            <li className="s-hide">
               <Link to="/">HOME</Link>
             </li>
-            <li>
+            <li className="s-hide">
               <Link to="/products">SHOP</Link>
             </li>
-            <li>
+            <li className="s-hide">
               <Link to="/contact">CONTACT</Link>
             </li>
             <li className="image-link">
               <Link to="/cart">
-                <img src={cartIcon} alt="Etsy" />
+                <img src={cartIcon} alt="Shopping Cart" />
               </Link>
             </li>
           </ul>
