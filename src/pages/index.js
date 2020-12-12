@@ -233,7 +233,7 @@ const CallToAction = styled.div`
 
 const IndexPage = ({ data }) => (
   <Layout page="home">
-    <SEO title="Penny Bug & Co" />
+    <SEO title="The Gift Of Giving" page="index" />
     <SwirlContainer>
       <img src={swirlAccent} alt="decorative line" />
     </SwirlContainer>
@@ -309,21 +309,21 @@ export const data = graphql`
     }
     product1: file(relativePath: { eq: "product-1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 480) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     product2: file(relativePath: { eq: "product-2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 480) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     product3: file(relativePath: { eq: "product-3.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 480) {
           ...GatsbyImageSharpFluid
         }
       }
