@@ -213,11 +213,12 @@ const Cart = () => {
                           <Col className="flex-1">
                             <div className="item-details">
                               <h3>{item.title}</h3>
-                              {Object.keys(item.variants).map((key, i) => (
-                                <p key={`item${i}`}>
-                                  {key}: {item.variants[key]}
-                                </p>
-                              ))}
+                              {item.variants &&
+                                Object.keys(item.variants).map((key, i) => (
+                                  <p key={`item${i}`}>
+                                    {key}: {item.variants[key]}
+                                  </p>
+                                ))}
                               <p>Customization: {item.customization}</p>
                               <p>QTY: {item.qty ? item.qty : 1}</p>
                             </div>
