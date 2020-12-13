@@ -108,11 +108,15 @@ function listItems(lineItems) {
   for (let i = 0; i < lineItems.length; i++) {
     const item = lineItems[i]
     return_string += `<br />Item ${i + 1}: ${item.title}<br />`
-    const variants = Object.keys(item.variants)
-    for (let variant of variants) {
-      return_string += `${variant}: ${item.variants[variant]}<br />`
+    if (item.variants) {
+      const variants = Object.keys(item.variants)
+      for (let variant of variants) {
+        return_string += `${variant}: ${item.variants[variant]}<br />`
+      }
     }
-    return_string += `Customization: ${item.customization}<br />`
+    if (item.customization) {
+      return_string += `Customization: ${item.customization}<br />`
+    }
   }
   return_string += `<br /></div>`
   return return_string
