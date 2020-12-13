@@ -144,7 +144,7 @@ exports.handler = function (event, context, callback) {
   const html = `<div>Order Number: ${customer.session.id}<br />
       For: ${customer_name}${customer_email}<br />
       ${listItems(lineItems)}
-      Total: ${total_paid}<br />
+      Total: ${parseInt(total_paid) * 0.01}<br />
       Deliver To: ${customer_address.line1}, ${
     customer_address.line2 ? customer_address.line2 + ", " : ""
   }${customer_address.city}, ${customer_address.state}, ${
