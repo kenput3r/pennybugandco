@@ -131,12 +131,12 @@ exports.handler = function (event, context, callback) {
   const customer_address = customer.session.shipping.address
   const total_paid = customer.session.amount_total
   let transporter = nodemailer.createTransport({
-    host: "smtp-relay.sendinblue.com",
-    port: 587,
-    secure: false,
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.SEND_BLUE_EMAIL_ADDRESS,
-      pass: process.env.SEND_BLUE_EMAIL_PASSWORD,
+      user: process.env.EMAIL_ADDRESS,
+      pass: process.env.EMAIL_PASSWORD,
     },
   })
   console.log(event.body)
