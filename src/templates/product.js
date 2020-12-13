@@ -115,7 +115,12 @@ const Col = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-
+  &.carousel,
+  &.details {
+    @media (min-width: 768px) {
+      max-width: 50%;
+    }
+  }
   &.padded {
     padding: 60px;
     @media (max-width: 767px) {
@@ -125,7 +130,6 @@ const Col = styled.div`
       }
     }
   }
-
   &.small-100 {
     @media (max-width: 767px) {
       max-width: 100%;
