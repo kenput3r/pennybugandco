@@ -56,6 +56,10 @@ const Container = styled.div`
   .flex-1 {
     flex: 1;
   }
+  p.qty,
+  p.price {
+    padding-top: 10px;
+  }
   .total {
     color: var(--primary-dark);
     display: flex;
@@ -219,8 +223,13 @@ const Cart = () => {
                                     {key}: {item.variants[key]}
                                   </p>
                                 ))}
-                              <p>Customization: {item.customization}</p>
-                              <p>QTY: {item.qty ? item.qty : 1}</p>
+
+                              {item.customization && (
+                                <p>Customization: {item.customization}</p>
+                              )}
+                              <p className="qty">
+                                QTY: {item.qty ? item.qty : 1}
+                              </p>
                             </div>
                           </Col>
                           <Col className="price-col">
