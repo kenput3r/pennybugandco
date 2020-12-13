@@ -21,6 +21,7 @@ const SwirlContainer = styled.div`
     margin-top: -75px;
     position: absolute;
     right: 0;
+    z-index: 11;
 
     @media (max-width: 500px) {
       display: none;
@@ -115,7 +116,12 @@ const Col = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-
+  &.carousel,
+  &.details {
+    @media (min-width: 768px) {
+      max-width: 50%;
+    }
+  }
   &.padded {
     padding: 60px;
     @media (max-width: 767px) {
@@ -125,7 +131,6 @@ const Col = styled.div`
       }
     }
   }
-
   &.small-100 {
     @media (max-width: 767px) {
       max-width: 100%;

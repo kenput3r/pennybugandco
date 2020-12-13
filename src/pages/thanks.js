@@ -12,6 +12,7 @@ const Page = styled.div`
   height: calc(100vh - 360px);
   .message {
     max-width: 480px;
+    padding: 15px;
   }
   h1 {
     color: var(--primary-dark);

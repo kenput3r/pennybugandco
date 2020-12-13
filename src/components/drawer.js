@@ -15,7 +15,7 @@ const Container = styled.div`
   font-family: var(--button-font-fat);
   text-align: left;
   padding: 2rem;
-  padding-top: calc(2rem + 86px);
+  padding-top: 0;
   position: fixed;
   top: 0;
   left: 0;

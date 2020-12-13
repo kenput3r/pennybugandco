@@ -13,6 +13,9 @@ const Page = styled.div`
   h1 {
     color: var(--primary-dark);
     font-family: var(--title-font);
+    @media (max-width: 500px) {
+      padding-top: 1.45rem;
+    }
   }
   form {
     padding: 5px;
@@ -33,8 +36,19 @@ const Page = styled.div`
       outline-color: var(--accent-dark);
     }
   }
+  .l-inline-block {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
   #name {
     width: 100%;
+  }
+  #email,
+  #phone {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
   .row {
     display: flex;
@@ -126,13 +140,13 @@ const Contact = () => {
             </label>
           </p>
           <div className="form-group">
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
             <input type="text" name="Name" id="name" onChange={handleChange} />
           </div>
 
           <div className="row">
             <div className="form-group l-inline-block">
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 name="Email"
@@ -142,7 +156,7 @@ const Contact = () => {
             </div>
 
             <div className="form-group l-inline-block">
-              <label for="phone">Phone</label>
+              <label htmlFor="phone">Phone</label>
               <input
                 type="tel"
                 name="Phone"
@@ -153,7 +167,7 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label for="message">Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               name="Message"
               id="message"
