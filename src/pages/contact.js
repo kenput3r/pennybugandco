@@ -13,6 +13,9 @@ const Page = styled.div`
   h1 {
     color: var(--primary-dark);
     font-family: var(--title-font);
+    @media (max-width: 500px) {
+      padding-top: 1.45rem;
+    }
   }
   form {
     padding: 5px;
@@ -33,8 +36,19 @@ const Page = styled.div`
       outline-color: var(--accent-dark);
     }
   }
+  .l-inline-block {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
   #name {
     width: 100%;
+  }
+  #email,
+  #phone {
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
   .row {
     display: flex;
