@@ -21,6 +21,7 @@ const SwirlContainer = styled.div`
     margin-top: -75px;
     position: absolute;
     right: 0;
+    z-index: 11;
 
     @media (max-width: 500px) {
       display: none;
